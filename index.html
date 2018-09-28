@@ -42,66 +42,50 @@
 <div class="form-div4">
     <label>Select your product</label>
     <br>
-    <select id='ban'>
+    <select id="ban">
+       <option value="blank">Chọn ban</option>
         <option value="content">Content</option>
         <option value="digital">Digital</option>
         <option value="event">Event</option>
     </select>
 </div>
 <div class="form-digital">
-    <label>Digital Section</label>
-    <br>
-    <input type "text" name="input2" class="input2">
+    <h1>BAN DIGITAL</h1>
+   <h3>chuẩn bị những gì?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="DIGITAL_TEST1"></p>
+    <h3>Một sự kiện được tổ chnhư thế nào ?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="DIGITAL_TEST2"></p>
 </div>
     
 <div class="form-event">
-    <label>Event Section</label>
-    <br>
-    <input type "text" name="input2" class="input2">
+    <h1>BAN EVENT</h1>
+   <h3>Để chuẩn bị cho một sự kiện nhỏ trong câu lạc bộ, theo bạn cần chuẩn bị những gì?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="EVENT_TEST1"></p>
+    <h3>Một sự kiện được tổ chức thành công là một sự kiện như thế nào ?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="EVENT_TEST2"></p>
 </div>
     
 <div class="form-content">
-    <label>Content Section</label>
-    <br>
-    <input type "text" name="input2" class="input2">
+    <h1>BAN NỘI DUNG</h1>
+   <h3>Để chuẩn b trong câu lạc bộ, theo bạn cần chuẩn bị những gì?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="CONTENT_TEST1"></p>
+    <h3>Một sự kiện được tổ một sự kiện như thế nào ?</h3>
+    <p><input placeholder="" oninput="this.className = ''" name="CONTENT_TEST2"></p>
 </div>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
  </div>
-  <div class="tab">Birthday:
-    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-  </div>
-  <div class="tab">Login Info:
-    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-  </div>
+  
   <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-      <button type="submit" value="Send" id="Submit" onclick="nextPrev(1)">Submit</button>
+<!--      <button type="submit" value="Send" id="Submit" onclick="nextPrev(1)">Submit</button>-->
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
   <div style="text-align:center;margin-top:40px;">
     <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
+    <span class="step"></span>	
   </div>
 </form>
 
@@ -122,13 +106,13 @@ function showTab(n) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-//  if (n == (x.length - 1)) {
-//    document.getElementById("nextBtn").innerHTML = "Submit";
-//	  document.getElementById("nextBtn").value ="send"
-//	  	document.getElementById("nextBtn").type ="submit"
-//  } else {
-//    document.getElementById("nextBtn").innerHTML = "Next";
-//  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+	  document.getElementById("nextBtn").value ="send"
+	  	document.getElementById("nextBtn").type ="submit"
+  } else {
+   document.getElementById("nextBtn").innerHTML = "Next";
+  }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
 }
@@ -189,10 +173,7 @@ function fixStepIndicator(n) {
 	$('.form-div2, .form-div3, .form-div4, .form-div5').show();
 $('.form-digtal, .form-content, .form-event').hide();
 
-$('#user').change(function () {
-    var selected = $('#user option:selected').text();
-    $('.form-div2, .form-div3').toggle(selected == "I'm a first-time user");
-});
+
 
 $('#ban').change(function () {
     var selected = $('#ban option:selected').text();
