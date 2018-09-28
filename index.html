@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>YOUM INTERVIEW</title>
 <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
@@ -11,14 +12,74 @@
 <form id="regForm" action="https://formspree.io/anhchung1998@gmail.com" method="POST">
   <h1>Register:</h1>
   <!-- One "tab" for each step in the form: -->
-  <div class="tab">Name:
-    <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-    <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+  <div class="tab"> <h1>Thông tin cá nhân</h1>
+   <h3>Họ và tên lót của bạn</h3>
+    <p><input placeholder="Họ và tên lót của bạn..." oninput="this.className = ''" name="Họ Tên"></p>
+    <h3>Tên của bạn là</h3>
+    <p><input placeholder="Tên bạn là..." oninput="this.className = ''" name="Tên"></p>
+    <h3>Giới tính</h3>
+    <p><input type="radio"  oninput="this.className = ''" value="Nam" name="Giới tính">Nam</p>
+    <p><input type="radio"  oninput="this.className = ''" value="Nữ" name="Giới tính">Nữ</p>
+    <p><input type="radio"  oninput="this.className = ''" value="Khác" name="Giới tính">Khác</p>
+    <h3>Số điện thoại</h3>
+    <p><input type="number" placeholder="Nhập số điện thoại của bạn" oninput="this.className = ''" name="SĐT"></p>
+    <h3>Địa chỉ email</h3>
+    <p><input placeholder="E-mail của bạn là" oninput="this.className = ''" name="Email"></p>
+    <h3>MSSV</h3>
+    <p><input placeholder="MSSV của bạn là" oninput="this.className = ''" name="MSSV"></p>
+    <h3>Bạn ở quận mấy ?</h3>
+    <p><input placeholder="Nhập địa chỉ của bạn" oninput="this.className = ''" name="Địa chỉ"></p>
+    <h3>Bạn di chuyển bằng phương tiện nào?</h3>
+    <p><input placeholder="Phương tiện của bạn là" oninput="this.className = ''" name="Phương tiện"></p>
+    <h3>Bạn có đang tham gia vào tổ chức/CLB nào không?</h3>
+    <p><input placeholder="Nhập tên tổ chức/CLB đó" oninput="this.className = ''" name="Tổ chức"></p>
+     
   </div>
-  <div class="tab">Contact Info:
-    <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-    <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-  </div>
+  <div class="tab"><h1>Thông tin cá nhân</h1>
+ 
+
+
+<div class="form-div4">
+    <label>Select your product</label>
+    <br>
+    <select id='ban'>
+        <option value="content">Content</option>
+        <option value="digital">Digital</option>
+        <option value="event">Event</option>
+    </select>
+</div>
+<div class="form-digital">
+    <label>Digital Section</label>
+    <br>
+    <input type "text" name="input2" class="input2">
+</div>
+    
+<div class="form-event">
+    <label>Event Section</label>
+    <br>
+    <input type "text" name="input2" class="input2">
+</div>
+    
+<div class="form-content">
+    <label>Content Section</label>
+    <br>
+    <input type "text" name="input2" class="input2">
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ </div>
   <div class="tab">Birthday:
     <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
     <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
@@ -44,8 +105,11 @@
   </div>
 </form>
 
+<script src="js/jquery-3.3.1.min.js"  ></script>
+
+
 <script>
-var currentTab = 0; // Current tab is set to be the first tab (0)
+var currentTab = 1; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
 
 function showTab(n) {
@@ -121,7 +185,26 @@ function fixStepIndicator(n) {
 }
 </script>
 
+<script>
+	$('.form-div2, .form-div3, .form-div4, .form-div5').show();
+$('.form-digtal, .form-content, .form-event').hide();
 
+$('#user').change(function () {
+    var selected = $('#user option:selected').text();
+    $('.form-div2, .form-div3').toggle(selected == "I'm a first-time user");
+});
+
+$('#ban').change(function () {
+    var selected = $('#ban option:selected').text();
+    $('.form-digital').toggle(selected == "Digital");
+	 var selected = $('#ban option:selected').text();
+    $('.form-content').toggle(selected == "Content");
+	 var selected = $('#ban option:selected').text();
+    $('.form-event').toggle(selected == "Event");
+
+});
+	
+</script>
 
 </body>
 </html>
