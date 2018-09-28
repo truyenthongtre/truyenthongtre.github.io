@@ -2,8 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>YOUM INTERVIEW</title>
+<title>Interview form YOUM</title>
+<link rel="shortcut icon" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
 <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -84,9 +88,9 @@ Ngày 20/10 đã sắp đến gần, bạn hãy đưa ra một idea tổ chức 
   
   <div style="overflow:auto;">
     <div style="float:right;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
- <button type="submit" value="Send" id="Submit" onclick="nextPrev(1)">Submit</button>
+      <button type="button" class="btn btn-4 btn-4b icon-arrow-left" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" class="btn btn-4 btn-4a icon-arrow-right" id="nextBtn" onclick="nextPrev(1)">Next</button>
+ <button type="submit" class="btn btn-4 btn-1c submit" value="Send" id="Submit" onclick="nextPrev(1)">Submit</button>
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
@@ -94,17 +98,22 @@ Ngày 20/10 đã sắp đến gần, bạn hãy đưa ra một idea tổ chức 
     <span class="step"></span>
     <span class="step"></span>	
   </div>
+  
+  <p style="font-size: small; font-style: italic;">form created by Anh Chung</p>
 </form>
 
 
 
-
+<!----- FORM -->
 <script src="js/jquery-3.3.1.min.js"  ></script>
 
 
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
+
+	
+	
 
 function showTab(n) {
   // This function will display the specified tab of the form...
@@ -145,6 +154,7 @@ function nextPrev(n) {
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
+	
 
 function validateForm() {
   // This function deals with validation of the form fields
@@ -166,8 +176,9 @@ function validateForm() {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
-}
-
+}	
+	
+		
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
@@ -196,6 +207,42 @@ $('#ban').change(function () {
 });
 	
 </script>
+<!----- BUTTON -->
+<script src="js/classie.js"></script>
+		<script>
+			var buttons7Click = Array.prototype.slice.call( document.querySelectorAll( '#btn-click button' ) ),
+				buttons9Click = Array.prototype.slice.call( document.querySelectorAll( 'button.btn-8g' ) ),
+				totalButtons7Click = buttons7Click.length,
+				totalButtons9Click = buttons9Click.length;
 
+			buttons7Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+			buttons9Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+
+			function activate() {
+				var self = this, activatedClass = 'btn-activated';
+
+				if( classie.has( this, 'btn-7h' ) ) {
+					// if it is the first of the two btn-7h then activatedClass = 'btn-error';
+					// if it is the second then activatedClass = 'btn-success'
+					activatedClass = buttons7Click.indexOf( this ) === totalButtons7Click-2 ? 'btn-error' : 'btn-success';
+				}
+				else if( classie.has( this, 'btn-8g' ) ) {
+					// if it is the first of the two btn-8g then activatedClass = 'btn-success3d';
+					// if it is the second then activatedClass = 'btn-error3d'
+					activatedClass = buttons9Click.indexOf( this ) === totalButtons9Click-2 ? 'btn-success3d' : 'btn-error3d';
+				}
+
+				if( !classie.has( this, activatedClass ) ) {
+					classie.add( this, activatedClass );
+					setTimeout( function() { classie.remove( self, activatedClass ) }, 1000 );
+				}
+			}
+
+			document.querySelector( '.btn-7i' ).addEventListener( 'click', function() {
+				classie.add( document.querySelector( '#trash-effect' ), 'trash-effect-active' );
+			}, false );
+		</script>
+		
+		
 </body>
 </html>

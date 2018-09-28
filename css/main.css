@@ -34,7 +34,7 @@ input {
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: #ffdddd;
+  background-color: #FDCACA;
 }
 
 /* Hide all steps by default: */
@@ -43,11 +43,13 @@ input.invalid {
 }
 
 button {
+/*
   background-color: #ff0000;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-size: 17px;
+*/
   
   cursor: pointer;
 }
@@ -57,7 +59,7 @@ button:hover {
 }
 
 #prevBtn {
-  background-color: #BF4749;
+  background-color: #D05355;
 }
 
 /* Make circles that indicate the steps of the form: */
