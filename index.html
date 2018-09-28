@@ -3,14 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>YOUM INTERVIEW</title>
+<link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
 
+
+
+
 <form id="regForm" action="https://formspree.io/anhchung1998@gmail.com" method="POST">
-  <h1>Register:</h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab"> <h1>Thông tin cá nhân</h1>
    <h3>Họ và tên lót của bạn</h3>
@@ -18,9 +21,11 @@
     <h3>Tên của bạn là</h3>
     <p><input placeholder="Tên bạn là..." oninput="this.className = ''" name="Tên"></p>
     <h3>Giới tính</h3>
-    <p><input type="radio"  oninput="this.className = ''" value="Nam" name="Giới tính">Nam</p>
-    <p><input type="radio"  oninput="this.className = ''" value="Nữ" name="Giới tính">Nữ</p>
-    <p><input type="radio"  oninput="this.className = ''" value="Khác" name="Giới tính">Khác</p>
+    <select >
+        <option value="Nam">Nam</option>
+        <option value="Nữ">Nữ</option>
+        <option value="Khác">Khác</option>
+    </select>
     <h3>Số điện thoại</h3>
     <p><input type="number" placeholder="Nhập số điện thoại của bạn" oninput="this.className = ''" name="SĐT"></p>
     <h3>Địa chỉ email</h3>
@@ -35,13 +40,13 @@
     <p><input placeholder="Nhập tên tổ chức/CLB đó" oninput="this.className = ''" name="Tổ chức"></p>
      
   </div>
-  <div class="tab"><h1>Thông tin cá nhân</h1>
+  <div class="tab"><h1>Thông tin cụ thể</h1>
  
 
 
-<div class="form-div4">
-    <label>Select your product</label>
-    <br>
+
+    <h3>Chọn ban bạn muốn tham gia</h3>
+    <div class="form-div4">
     <select id="ban">
        <option value="blank">Chọn ban</option>
         <option value="content">Content</option>
@@ -51,9 +56,10 @@
 </div>
 <div class="form-digital">
     <h1>BAN DIGITAL</h1>
-   <h3>chuẩn bị những gì?</h3>
+   <h3>Bạn có thường xem những website/ ứng dụng gì về thiết kế không ? (Trừ facebook, instagram,...)
+Bạn hãy viết nhận xét khoảng 100 từ về concept thiết kế tuyển Cộng Tác Viên của CLB Truyền Thông Trẻ nhé ? </h3>
     <p><input placeholder="" oninput="this.className = ''" name="DIGITAL_TEST1"></p>
-    <h3>Một sự kiện được tổ chnhư thế nào ?</h3>
+    <h3>Nếu bạn thực hiện chương trình Tuyển Cộng Tác Viên năm 2019 bạn sẽ chọn concept màu gì để phối hợp với nhau ?</h3>
     <p><input placeholder="" oninput="this.className = ''" name="DIGITAL_TEST2"></p>
 </div>
     
@@ -67,9 +73,10 @@
     
 <div class="form-content">
     <h1>BAN NỘI DUNG</h1>
-   <h3>Để chuẩn b trong câu lạc bộ, theo bạn cần chuẩn bị những gì?</h3>
+   <h3>Bài Test Ban nội dung 
+Ngày 20/10 đã sắp đến gần, bạn hãy đưa ra một idea tổ chức một sự kiện nho nhỏ để chúc mừng ngày này.</h3>
     <p><input placeholder="" oninput="this.className = ''" name="CONTENT_TEST1"></p>
-    <h3>Một sự kiện được tổ một sự kiện như thế nào ?</h3>
+    <h3>Giả sử bạn đang viết một bài giới thiệu về chương trình sắp diễn ra của CLB trên fanpage, bạn nghĩ bạn sẽ viết gì để thu hút người đọc ? Hãy thử vận dụng điều đó vào bài viết cho ý tưởng 20/10 của bạn nhé.</h3>
     <p><input placeholder="" oninput="this.className = ''" name="CONTENT_TEST2"></p>
 </div>
   
@@ -88,6 +95,9 @@
     <span class="step"></span>	
   </div>
 </form>
+
+
+
 
 <script src="js/jquery-3.3.1.min.js"  ></script>
 

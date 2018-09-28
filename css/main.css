@@ -6,13 +6,15 @@
 }
 
 body {
-  background-color: #f1f1f1;
+  background-image:url(../images/img1.jpg);
+	font-family:  'Bai Jamjuree', sans-serif;
+	color: white;
 }
 
 #regForm {
-  background-color: #ffffff;
+  background-color: rgba(0,47,183,0.74);
   margin: 100px auto;
-  font-family: Raleway;
+  
   padding: 40px;
   width: 70%;
   min-width: 300px;
@@ -26,7 +28,7 @@ input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  font-family: Raleway;
+  
   border: 1px solid #aaaaaa;
 }
 
@@ -41,12 +43,12 @@ input.invalid {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #ff0000;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-size: 17px;
-  font-family: Raleway;
+  
   cursor: pointer;
 }
 
@@ -55,7 +57,7 @@ button:hover {
 }
 
 #prevBtn {
-  background-color: #bbbbbb;
+  background-color: #BF4749;
 }
 
 /* Make circles that indicate the steps of the form: */
@@ -63,7 +65,7 @@ button:hover {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbbbbb;
+  background-color: #ED0A0E;
   border: none;  
   border-radius: 50%;
   display: inline-block;
@@ -80,3 +82,12 @@ button:hover {
 }
 
 
+select
+{
+	padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid #aaaaaa;
+	
+}
